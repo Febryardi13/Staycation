@@ -13,6 +13,13 @@ export default class LandingPage extends Component {
         super(props)
         this.refMousePicked = React.createRef();
     }
+    
+    componentDidMount () {
+        window.title = "Staycation | Home";
+        window.scroll(0, 0);
+    }
+    
+
     render() {
         return (
             <>

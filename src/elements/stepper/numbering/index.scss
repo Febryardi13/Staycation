@@ -1,0 +1,71 @@
+@import '../../../assets//scss/colorVariables';
+
+$stepperMainColor: $gray-200;
+$size: 50px;
+
+ol.stepper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+
+    li {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        list-style: none;
+        width: $size;
+        height: $size;
+        border-radius: $size;
+        color: $white;
+        
+        &:after {
+            position: absolute;
+            content: "";
+            z-index: 2;
+            width: $size;
+            height: $size;
+            border-radius: $size;
+            background-image: url('data:image/svg+xml;utf8,<svg width="25" height="18" viewBox="0 0 25 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 7L6.84 14.8362C7.52073 15.9383 9.0536 16.1124 9.96416 15.191L23 2" stroke="white" stroke-width="4" stroke-linecap="round"/></svg>');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: $teal;
+            transform: scale(1);
+            transition: 0.35s transform ease-in-out; //animation ketika akan masuk & keluar agak lambat
+        }
+        &:not(:last-child) {
+            margin-right: 60px;
+            &:before {
+                content: "";
+                z-index: -2;
+                top: 50;
+                left: 100%;
+                position: absolute;
+                width: $size + 10;
+                height: 1px;
+                background-color: $stepperMainColor;
+            }
+        }
+
+        &.active {
+            &:after {
+                z-index: -1;
+                background: $white;
+                border: 1px solid $stepperMainColor;
+                transform: scale(1.2);
+            }
+            background-color: $stepperMainColor;
+            color: $gray-500;
+
+            & ~ li {
+                color: $gray-500;
+                background: $stepperMainColor;
+                &:after {
+                    content: none;
+                }
+            }
+        }
+    }
+}

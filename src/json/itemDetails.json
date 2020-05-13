@@ -1,24 +1,24 @@
 {
   "_id": "asd1293uasdads1",
-  "name": "Village Angga",
+  "name": "Luxury Cottage Febry",
   "type": "Hotel",
   "imageUrls": [
     {
       "_id": "asd1293uasdads1",
-      "url": "/images/img-featured-1.jpg"
+      "url": "/images/img-feature-big1.jpg"
     },
     {
       "_id": "asd1293uasdads1",
-      "url": "/images/img-featured-2.jpg"
+      "url": "/images/img-feature-small1a.jpg"
     },
     {
       "_id": "asd1293uasdads1",
-      "url": "/images/img-featured-3.jpg"
+      "url": "/images/img-feature-small1b.jpg"
     }
   ],
   "country": "Indonesia",
-  "city": "Bogor",
-  "price": "52",
+  "city": "Bali",
+  "price": "123",
   "unit": "night",
   "isPopular": true,
   "hasBackyard": true,
@@ -28,49 +28,49 @@
       "_id": "asd1293uasdads1",
       "qty": "3",
       "name": "bedroom",
-      "imageUrl": "/images/icon-bedroom.svg"
+      "imageUrl": "/images/Icon_bedroom.svg"
     },
     {
       "_id": "asd1293uasdads1",
       "qty": "1",
       "name": "living room",
-      "imageUrl": "/images/icon-livingroom.svg"
+      "imageUrl": "/images/Icon_livingroom.svg"
     },
     {
       "_id": "asd1293uasdads1",
       "qty": "2",
       "name": "bath room",
-      "imageUrl": "/images/icon-bathroom.svg"
+      "imageUrl": "/images/Icon_bathroom.svg"
     },
     {
       "_id": "asd1293uasdads1",
       "qty": "1",
       "name": "dining room",
-      "imageUrl": "/images/icon-diningroom.svg"
+      "imageUrl": "/images/Icon_diningrooms.svg"
     },
     {
       "_id": "asd1293uasdads1",
       "qty": "10",
       "name": "mbps",
-      "imageUrl": "/images/icon-wifi.svg"
+      "imageUrl": "/images/Icon_wifi.svg"
     },
     {
       "_id": "asd1293uasdads1",
       "qty": "2",
       "name": "units ready",
-      "imageUrl": "/images/icon-airconditioner.svg"
+      "imageUrl": "/images/Icon_unitAC.svg"
     },
     {
       "_id": "asd1293uasdads1",
       "qty": "2",
       "name": "refrigerator",
-      "imageUrl": "/images/icon-refrigerator.svg"
+      "imageUrl": "/images/Icon_refrigator.svg"
     },
     {
       "_id": "asd1293uasdads1",
       "qty": "1",
       "name": "television",
-      "imageUrl": "/images/icon-tv.svg"
+      "imageUrl": "/images/Icon_television.svg"
     }
   ],
   "activities": [
@@ -78,25 +78,37 @@
       "_id": "asd1293uasdads1",
       "name": "Kebun Park",
       "type": "Nature",
-      "imageUrl": "/images/categoryItem1.png"
+      "imageUrl": "/images/img-activities-detailpage-1.jpg",
+      "country": "Indonesia",
+      "city": "Bali",
+      "isPopular": true
     },
     {
       "_id": "asd1293uasdads1",
       "name": "Water land",
       "type": "Pool",
-      "imageUrl": "/images/categoryItem2.png"
+      "imageUrl": "/images/img-activities-detailpage-2.jpg",
+      "country": "Indonesia",
+      "city": "Bali",
+      "isPopular": false
     },
     {
       "_id": "asd1293uasdads1",
       "name": "Kebun Park",
       "type": "Nature",
-      "imageUrl": "/images/categoryItem3.png"
+      "imageUrl": "/images/img-activities-detailpage-3.jpg",
+      "country": "Indonesia",
+      "city": "Bali",
+      "isPopular": false
     },
     {
       "_id": "asd1293uasdads1",
       "name": "Water land",
       "type": "Pool",
-      "imageUrl": "/images/categoryItem4.png"
+      "imageUrl": "/images/img-activities-detailpage-4.jpg",
+      "country": "Indonesia",
+      "city": "Bali",
+      "isPopular": false
     }
   ],
   "categories": [
@@ -141,9 +153,9 @@
   ],
   "testimonial": {
     "_id": "asd1293uasdads1",
-    "imageUrl": "/images/testimonial-detailspage.jpg",
+    "imageUrl": "/images/img-testimony-detailpage.png",
     "name": "Happy Family",
-    "rate": 4.25,
+    "rate": 4.55,
     "content": "What a great trip with my family and I should try again and again next time soon...",
     "familyName": "Angga",
     "familyOccupation": "UI Designer"

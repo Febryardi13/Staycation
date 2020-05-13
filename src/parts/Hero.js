@@ -21,7 +21,7 @@ export default function Hero(props) {
 
     return (
         <Fade bottom>
-            <section className="container pt-4">
+            <section className="container pt-5">
                 <div className="row align-items-center">
                     <div className="col-auto pr-5" style={{ width: 530 }}>
                         <h1 className="font-weight-bold line-height-1 mb-3">
@@ -65,7 +65,7 @@ export default function Hero(props) {
                         </div>
                     </div>
                     <div className="col-6 pr-4">
-                        <div style={{Width:320, height:410}}>
+                        <div style={{Width:360, height:410}}>
                             <img 
                                 src={ImgHero} 
                                 alt="Room with couches" 
