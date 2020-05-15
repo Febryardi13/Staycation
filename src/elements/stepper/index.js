@@ -22,14 +22,16 @@ export default function Stepper(props) {
         if(+indexStep < totalStep) setCurrentStep(stepKeys[indexStep + 1])
     }
 
-    return (
-        <>
-            {props.children(prevStep, nextStep, CurrentStep, steps)}   
-        </>
-    )
+    return <>{props.children(prevStep, nextStep, CurrentStep, steps)}</>
+    
 }
 
 Stepper.propTypes = {
-    data: propTypes.object.isRequired,
+    steps: propTypes.object.isRequired,
     initialStep: propTypes.string
 }
+
+export { default as Numbering } from './numbering'
+export { default as Meta } from './meta'
+export { default as Controller } from './controller'
+export { default as MainContent } from './mainContent'

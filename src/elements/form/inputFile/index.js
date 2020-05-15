@@ -27,16 +27,16 @@ export default function File(props) {
                     </div>
                 )}
                 <input
-                    name={name}
                     accept={accept}
                     ref={refInputFile} 
-                    type="file" 
+                    name={name}
                     className="d-none"
+                    type="file" 
                     value={value}
                     onChange={props.onChange}
                 />
                 <input 
-                    onClick={()=>refInputFile.current.clcik()}
+                    onClick={()=>refInputFile.current.click()}
                     defaultValue={value}
                     placeholder={placeholder}
                     className={["form-control", inputClassName].join(" ")}
@@ -51,13 +51,11 @@ export default function File(props) {
     )
 }
 
-Text.defaultProps = {
-    type: "text",
-    pattern: "",
-    placeholder: "Please type here..."
+File.defaultProps = {
+    placeholder: "Browse a file..."
 }
 
-Text.propTypes = {
+File.propTypes = {
     name: propTypes.string.isRequired,
     accept: propTypes.string.isRequired,
     value: propTypes.string.isRequired,

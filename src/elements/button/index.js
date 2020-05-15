@@ -5,6 +5,7 @@ import propTypes from 'prop-types'
 export default function Button(props) {
     const className = [props.className]
     if(props.isPrimary) className.push("btn-primary")
+    if(props.isLight) className.push("btn-light")
     if(props.isLarge) className.push("btn-lg")
     if(props.isSmall) className.push("btn-sm")
     if(props.isBlock) className.push("btn-block")
@@ -77,6 +78,7 @@ Button.propTypes = {
     isExternal:propTypes.bool,
     isLoading:propTypes.bool,
     isPrimary:propTypes.bool,
+    isLight:propTypes.bool,
     isSmall:propTypes.bool,
     isLarge:propTypes.bool,
     isBlock:propTypes.bool,

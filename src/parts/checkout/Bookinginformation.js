@@ -4,6 +4,8 @@ import Fade from 'react-reveal/Fade';
 import { InputText } from 'elements/form'
 
 export default function Bookinginformation(props) {
+    const { data, ItemDetails, checkout } = props
+
     return (
         <Fade>
             <div className="container" style={{ marginBottom: 30 }}>
@@ -29,9 +31,9 @@ export default function Bookinginformation(props) {
                                     </div>
                                     <div className="col-auto">
                                         <span>
-                                            ${+checkout.duration * ItemDetails.duration} USD
+                                            ${+checkout.duration * ItemDetails.price} USD
                                             <span className="text-gray-500"> per </span>
-                                            {+checkout.duration * ItemDetails.unit}
+                                            {checkout.duration} {ItemDetails.unit}
                                             {+checkout.duration > 1 ? "s" : ""}
                                         </span>
                                     </div>
@@ -43,17 +45,17 @@ export default function Bookinginformation(props) {
                         <Fade delay={600}>
                             <label htmlFor="firstName">First Name</label>
                             <InputText 
-                                id="firstname"
-                                name="firstname"
-                                value={data.firstname}
+                                id="firstName"
+                                name="firstName"
+                                value={data.firstName}
                                 onChange={props.onChange}
                             />
 
                             <label htmlFor="lastName">Last Name</label>
                             <InputText 
-                                id="lastname"
-                                name="lastname"
-                                value={data.lastname}
+                                id="lastName"
+                                name="lastName"
+                                value={data.lastName}
                                 onChange={props.onChange}
                             />
 
@@ -66,7 +68,7 @@ export default function Bookinginformation(props) {
                                 onChange={props.onChange}
                             />
 
-                            <label htmlFor="phone">First Name</label>
+                            <label htmlFor="phone">Phone Number</label>
                             <InputText 
                                 id="phone"
                                 name="phone"
