@@ -32,7 +32,7 @@ export default function PageDetailActivities({ data }) {
                                                 </div>
                                             )}
                                             <figure style={{ height:180 }}>
-                                                <img src={item.imageUrl} alt={item.name} className="img-cover"/>
+                                                <img src={`${process.env.REACT_APP_HOST}/${item.imageUrl}`} alt={item.name} className="img-cover"/>
                                             </figure>
                                             <div className="meta-wrapper">
                                                 <Button 

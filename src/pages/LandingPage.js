@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import landingPage from 'json/landingPage.json'
 import { connect } from 'react-redux'
 
 import Header from 'parts/Header'
@@ -22,14 +21,13 @@ class LandingPage extends Component {
         window.scroll(0, 0);
 
         if(!this.props.landingPage) {
-            this.props.fetchPage(`https://adm-staycation.herokuapp.com/api/v1/member/landing-page`, 'landingPage')
+            this.props.fetchPage(`/landing-page`, 'landingPage')
         }
     }
     
 
     render() {
         const { page } = this.props
-
         if(!page.hasOwnProperty("landingPage")) {
             return null
         }
@@ -37,10 +35,10 @@ class LandingPage extends Component {
         return (
             <>
                 <Header {...this.props}></Header>
-                <Hero refMousePicked={this.refMousePicked} data={landingPage.hero} />
-                <MostPicked refMousePicked={this.refMousePicked} data={landingPage.mostPicked} />
-                <Categories data={landingPage.categories}/>
-                <Testimony data={landingPage.testimonial}/>
+                <Hero refMousePicked={this.refMousePicked} data={page.landingPage} />
+                <MostPicked refMousePicked={this.refMousePicked} data={page.landingPage} />
+                <Categories data={page.landingPage}/>
+                <Testimony data={page.landingPage.testimonial}/>
                 <Footer/>
             </>
         )

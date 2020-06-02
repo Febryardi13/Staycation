@@ -1,5 +1,5 @@
 import { FETCH_PAGE } from '../types'
-import axios from 'axios'
+import axios from 'configs/axios'
 
 export const fetchPage = (url, page) => (dispacth) => {
     return axios.get(url).then(res => {

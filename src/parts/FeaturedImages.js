@@ -5,7 +5,7 @@ export default function FeaturedImages( {data} ) {
     return (
         <section className="container">
             <div className="container-grid sm">
-                {data.map((item, index)=>{
+                {data.imageId.map((image, index)=>{
                     return (
                         <div
                         key={`FeaturedImage-${index}`}
@@ -14,7 +14,7 @@ export default function FeaturedImages( {data} ) {
                             <Fade bottom delay={300 * index}>
                                 <div className="card h-100">
                                     <figure className="img-wrapper">
-                                        <img className="img-cover" src={item.url} alt={item._id} />
+                                        <img className="img-cover" src={`${process.env.REACT_APP_HOST}/${image.imageUrl}`} alt={image._id} />
                                     </figure>
                                 </div>
                             </Fade>

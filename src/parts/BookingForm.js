@@ -75,12 +75,12 @@ class BookingForm extends Component {
                 endDate: data.date.endDate,
             }
         })
-        this.props.history.push('/checkout')
+        this.props.history.push("/checkout")
     }
 
     render () {
         const { data } = this.state
-        const { itemDetails, startBooking } = this.props
+        const { itemDetails } = this.props
 
         return (
             <div className="card bordered" style={{ padding: '60px 80px' }}>

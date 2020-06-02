@@ -11,7 +11,7 @@ import Fade from 'react-reveal/Fade';
 import numberFormat from 'utilisasi/formatNumber'
 
 export default function Hero(props) {
-
+    const data = props.data.hero
     function showMostPicked () {
         window.scrollTo({
             top: props.refMousePicked.current.offsetTop - 30,
@@ -36,27 +36,27 @@ export default function Hero(props) {
 
                         <div className="row"  style={{marginTop:80}}>
                             <div className="col-auto" style={{marginRight:'20px'}}>
-                                <img height="32px" width="32px" src={IconTravelers} alt={`${props.data.travelers} Travelers`} />
+                                <img height="32px" width="32px" src={IconTravelers} alt={`${data.travellers} Travelers`} />
                                 <h6 className="mt-3">
-                                    {numberFormat(props.data.travelers)}{" "}
+                                    {numberFormat(data.travellers)}{" "}
                                     <span className="text-gray-500 font-weight-light">
-                                        travelers
+                                        travellers
                                     </span>
                                 </h6>
                             </div>
                             <div className="col-auto" style={{marginRight:'20px'}}>
-                                <img height="32px" width="32px" src={IconTreasure} alt={`${props.data.treasures} Treasures`} />
+                                <img height="32px" width="32px" src={IconTreasure} alt={`${data.treasurers} Treasures`} />
                                 <h6 className="mt-3">
-                                    {numberFormat(props.data.treasures)}{" "}
+                                    {numberFormat(data.treasurers)}{" "}
                                     <span className="text-gray-500 font-weight-light">
                                         treasures
                                     </span>
                                 </h6>
                             </div>
                             <div className="col-auto">
-                                <img height="32px" width="32px" src={IconCities} alt={`${props.data.cities} Cities`} />
+                                <img height="32px" width="32px" src={IconCities} alt={`${data.cities} Cities`} />
                                 <h6 className="mt-3">
-                                    {numberFormat(props.data.cities)}{" "}
+                                    {numberFormat(data.cities)}{" "}
                                     <span className="text-gray-500 font-weight-light">
                                         cities
                                     </span>

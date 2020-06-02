@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import Fade from 'react-reveal/Fade';
 import { connect } from 'react-redux'
-
+import { submitBooking } from 'store/actions/checkout'
+ 
 import Header from 'parts/Header'
 import Button from 'elements/button'
 import Stepper, {
@@ -14,8 +15,6 @@ import Stepper, {
 import Bookinginformation from 'parts/checkout/Bookinginformation'
 import Payment from 'parts/checkout/Payment'
 import Completed from 'parts/checkout/Completed';
-
-import ItemDetails from 'json/itemDetails.json'
 
 class Checkout extends Component {
 
@@ -44,22 +43,52 @@ class Checkout extends Component {
         window.scroll(0, 0)
     }
 
+    _Submit = (nextStep) => {
+        const { data } = this.state
+        const { checkout } = this.props
+
+        const payload = new FormData()
+        payload.append("firstName", data.firstName)
+        payload.append("lastName", data.lastName)
+        payload.append("email", data.email)
+        payload.append("phoneNumber", data.phone)
+        payload.append("idItem", checkout._id)
+        payload.append("duration", checkout.duration)
+        payload.append("bookingStartDate", checkout.date.startDate)
+        payload.append("bookingEndDate", checkout.date.endDate)
+        payload.append("accountHolder", data.bankHolder)
+        payload.append("bankFrom", data.bankName)
+        payload.append("image", data.proofPayment[0])
+
+        this.props.submitBooking(payload)
+        .then( () => {
+            nextStep()
+        })
+    }
+
     render () {
         const { data } = this.state;
-        const { checkout } = this.props
+        const { checkout, page } = this.props
 
         if(!checkout) {
             return <div className="container">
                 <div className="row align-items-center justify-content-center text-center" style={{ height: "100vh" }}>
                     <div className="col-4">
                         <h5>Please choose property first</h5>
-                        <Button className="btn mt-2" type="link" href="/">
-                            Back to home
+                        <Button 
+                            className="btn mt-2" 
+                            type="button" 
+                            onClick={()=> this.props.history.goBack()}
+                            isLight
+                        >
+                            Back
                         </Button>
                     </div>
                 </div>
             </div>
         }
+
+        
 
         const steps = {
             bookingInformation: {
@@ -69,7 +98,7 @@ class Checkout extends Component {
                     <Bookinginformation 
                         data={data}
                         checkout={checkout}
-                        ItemDetails={ItemDetails}
+                        ItemDetails={page[checkout._id]}
                         onChange={this.onChange}
                     />
                 ),
@@ -82,7 +111,7 @@ class Checkout extends Component {
                     <Payment 
                         data={data}
                         checkout={checkout}
-                        ItemDetails={ItemDetails}
+                        ItemDetails={page[checkout._id]}
                         onChange={this.onChange}
                     />
                 ),
@@ -135,11 +164,11 @@ class Checkout extends Component {
                                             </Fade>
                                         )}
                                         <Button
-                                            className="btn"
-                                            type="link"
-                                            isBlock
+                                            className="btn mt-2" 
+                                            type="button" 
+                                            onClick={()=> this.props.history.goBack()}
                                             isLight
-                                            href={`/properties/${ItemDetails._id}`}
+                                            isBlock
                                         >
                                             Cancel
                                         </Button>
@@ -160,7 +189,7 @@ class Checkout extends Component {
                                                         isBlock
                                                         isPrimary
                                                         hasShadow
-                                                        onClick={nextStep}
+                                                        onClick={()=>this._Submit(nextStep)}
                                                     >
                                                         Continue to Book
                                                     </Button>
@@ -202,7 +231,8 @@ class Checkout extends Component {
 }
 
 const mapStateToProps = (state) => ({
-    checkout: state.checkout
+    checkout: state.checkout,
+    page: state.page
 })
 
-export default connect(mapStateToProps)(Checkout)
+export default connect(mapStateToProps, { submitBooking })(Checkout)
