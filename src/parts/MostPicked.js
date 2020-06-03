@@ -21,6 +21,7 @@ export default function MostPicked(props) {
                                             <span className="font-weight-light">per{" "}{val.unit}</span>
                                             </div>
                                             <figure className="img-wrapper">
+                                                { console.log(val.imageId) }
                                                 {
                                                     val.imageId ? 
                                                         val.imageId.map((img, index)=> {
