@@ -14,7 +14,23 @@ import Footer from 'parts/Footer'
 import { checkoutBooking } from 'store/actions/checkout'
 import { fetchPage } from 'store/actions/page'
 
+import {css} from "@emotion/core"
+import ScaleLoader from 'react-spinners/ScaleLoader'
+
+const override = css`
+  display: block;
+  margin: auto;
+  border-color: red;
+  justify-content: center;
+`;
+
 class DetailsPage extends Component {
+    constructor (props){
+        super(props)
+        this.state = {
+            loading: true
+        }
+    }
 
     componentDidMount () {
         window.title = "Details Page"
@@ -31,7 +47,16 @@ class DetailsPage extends Component {
         // console.log(page[match.params._id])
 
         if(!page[this.props.match.params._id]) {
-            return null
+            return (
+                <div className="row align-items-center justify-content-center text-center" style={{ height: "100vh" }}>
+                    <ScaleLoader
+                        css={override}
+                        size={150}
+                        color={"#4764e2"}
+                        loading={this.state.loading}
+                    />
+                </div>
+            )
         }
 
         const breadcrumb = [

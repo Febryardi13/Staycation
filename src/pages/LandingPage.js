@@ -10,10 +10,23 @@ import Footer from 'parts/Footer'
 
 import { fetchPage } from 'store/actions/page'
 
+import {css} from "@emotion/core"
+import ScaleLoader from 'react-spinners/ScaleLoader'
+
+const override = css`
+  display: block;
+  margin: auto;
+  border-color: red;
+  justify-content: center;
+`;
+
 class LandingPage extends Component {
     constructor (props){
         super(props)
         this.refMousePicked = React.createRef();
+        this.state = {
+            loading: true
+        }
     }
     
     componentDidMount () {
@@ -28,9 +41,17 @@ class LandingPage extends Component {
 
     render() {
         const { page } = this.props
-        console.log(page)
         if(!page.hasOwnProperty("landingPage")) {
-            return null
+            return (
+                <div className="row align-items-center justify-content-center text-center" style={{ height: "100vh" }}>
+                    <ScaleLoader
+                        css={override}
+                        size={150}
+                        color={"#4764e2"}
+                        loading={this.state.loading}
+                    />
+                </div>
+            )
         }
         
         return (
