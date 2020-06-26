@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 import Header from 'parts/Header'
 import Hero from 'parts/Hero'
-import MostPicked from 'parts/MostPicked'
+import MostPicked from "parts/MostPicked"
 import Categories from 'parts/Categories'
 import Testimony from 'parts/Testimony'
 import Footer from 'parts/Footer'

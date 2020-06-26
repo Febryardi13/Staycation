@@ -156,6 +156,7 @@ class Checkout extends Component {
                                                     type="button"
                                                     isBlock
                                                     isPrimary
+                                                    isLoading
                                                     hasShadow
                                                     onClick={nextStep}
                                                 >
@@ -188,6 +189,7 @@ class Checkout extends Component {
                                                         type="button"
                                                         isBlock
                                                         isPrimary
+                                                        isLoading
                                                         hasShadow
                                                         onClick={()=>this._Submit(nextStep)}
                                                     >

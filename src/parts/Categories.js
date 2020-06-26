@@ -28,6 +28,8 @@ export default function Categories({ data }) {
                                                     </div>
                                                 )}
                                                 <figure className="img-wrapper" style={{ height:180 }}>
+                                                    
+                                                {console.log(item.imageId[0].imageUrl)}
                                                     <img src={ item.imageId[0] ? `${process.env.REACT_APP_HOST}/${item.imageId[0].imageUrl}` : ""} alt={item.title} className="img-cover"/>
                                                 </figure>
                                                 <div className="meta-wrapper">
