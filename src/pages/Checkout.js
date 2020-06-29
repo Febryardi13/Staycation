@@ -144,36 +144,37 @@ class Checkout extends Component {
                             />
                             <MainContent data={steps} current={currentStep} />
                             {currentStep === "bookingInformation" && (
-                                <Controller>
-                                    {
-                                        data.firstName !== "" &&
-                                        data.lastName !== "" &&
-                                        data.email !== "" &&
-                                        data.phone !== "" && (
-                                            <Fade>
-                                                <Button
-                                                    className="btn mb-3"
-                                                    type="button"
-                                                    isBlock
-                                                    isPrimary
-                                                    isLoading
-                                                    hasShadow
-                                                    onClick={nextStep}
-                                                >
-                                                    Continue Book
-                                                </Button>
-                                            </Fade>
-                                        )}
-                                        <Button
-                                            className="btn mt-2" 
-                                            type="button" 
-                                            onClick={()=> this.props.history.goBack()}
-                                            isLight
-                                            isBlock
-                                        >
-                                            Cancel
-                                        </Button>
-                                </Controller>
+                                <Fade>
+                                    <Controller>
+                                        {
+                                            data.firstName !== "" &&
+                                            data.lastName !== "" &&
+                                            data.email !== "" &&
+                                            data.phone !== "" && (
+                                                <Fade>
+                                                    <Button
+                                                        className="btn mb-3"
+                                                        type="button"
+                                                        isBlock
+                                                        isPrimary
+                                                        hasShadow
+                                                        onClick={nextStep}
+                                                    >
+                                                        Continue Book
+                                                    </Button>
+                                                </Fade>
+                                            )}
+                                            <Button
+                                                className="btn mt-2" 
+                                                type="button" 
+                                                onClick={()=> this.props.history.goBack()}
+                                                isLight
+                                                isBlock
+                                            >
+                                                Cancel
+                                            </Button>
+                                    </Controller>
+                                </Fade>
                             )}
 
                             {
@@ -189,7 +190,6 @@ class Checkout extends Component {
                                                         type="button"
                                                         isBlock
                                                         isPrimary
-                                                        isLoading
                                                         hasShadow
                                                         onClick={()=>this._Submit(nextStep)}
                                                     >
